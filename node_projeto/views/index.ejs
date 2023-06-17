@@ -1,0 +1,42 @@
+<html>
+    <meta charset="utf-8">
+   <head>
+      <title>  Clientes </title>
+
+      
+   </head>
+   <body> 
+    <h2>Clientes cadastrados dinâmico:</h2>
+   <section>
+    <div class="lista" >
+    
+    <ul>
+        <% lista.forEach(function(user){ %>
+            <label for="name">Nome:</label>
+         <li><%= user.Nome %></li>
+         <label for="name">Sobrenome:</label>
+         <li><%= user.sobrenome %></li>
+         <label for="name">Empresa:</label>
+         <li><%= user.empresa %></li>
+         <% }) %>
+    </ul>
+</div>
+</section>
+   
+
+
+   </body> 
+</html>
+
+<style type="text/css">
+    *{
+	margin: 0;
+	padding: 0;
+}
+    li{
+        width: 44%;
+
+        display: flex;
+        background: purple;
+    }
+</style>
