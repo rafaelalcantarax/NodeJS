@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes Cadastrados</title>
+    <style>
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a47ff, #04047c);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 28px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .cliente {
+            background: #fff;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 400px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cliente:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .cliente p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .cliente strong {
+            color: #0a47ff;
+        }
+
+        .no-clientes {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Link para cadastro */
+        .cadastrar-link {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #0a47ff, #04047c);
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .cadastrar-link:hover {
+            background: linear-gradient(135deg, #04047c, #0a47ff);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h2>Clientes Cadastrados</h2>
+
+    <% if (lista.length === 0) { %>
+        <div class="no-clientes">Nenhum cliente cadastrado ainda.</div>
+    <% } else { %>
+        <% lista.forEach(function(user){ %>
+            <div class="cliente">
+                <p><strong>Nome:</strong> <%= user.nome %></p>
+                <p><strong>Sobrenome:</strong> <%= user.sobrenome %></p>
+                <p><strong>Empresa:</strong> <%= user.empresa %></p>
+            </div>
+        <% }); %>
+    <% } %>
+
+    <a href="/registrar" class="cadastrar-link">Cadastrar Novo Cliente</a>
+</body>
+</html>

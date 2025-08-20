@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Cliente</title>
+    <style>
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0a47ff, #04047c);
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 400px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0a47ff;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #0a47ff;
+            box-shadow: 0 0 8px rgba(10, 71, 255, 0.3);
+            outline: none;
+        }
+
+        input[type="submit"] {
+            padding: 14px;
+            background: linear-gradient(135deg, #0a47ff, #04047c);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #04047c, #0a47ff);
+            transform: scale(1.05);
+        }
+
+        /* Mensagem de sucesso */
+        .success {
+            text-align: center;
+            color: green;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastrar Cliente</h2>
+        <!-- Mensagem de sucesso opcional -->
+        <% if (typeof mensagem !== 'undefined') { %>
+            <div class="success"><%= mensagem %></div>
+        <% } %>
+        <form method="post">
+            <label for="Nome">Nome:</label>
+            <input type="text" name="Nome" required>
+
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" name="sobrenome" required>
+
+            <label for="empresa">Empresa:</label>
+            <input type="text" name="empresa" required>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+</body>
+</html>
